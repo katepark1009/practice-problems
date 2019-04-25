@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      Build a function, find_middle_letters, that finds the middle of a string.
+      If the string is an odd number of characters, it returns 1 letter. If it
+      is an even number of characters, it returns 2 characters. It takes a
+      string as a parameter - Example: - find_middle_letters('seven') - Return:
+      'v' - find_middle_letters('dish') - Return: 'is'
+    </div>
+    <script>
+      function find_middle_letters(str) {
+        var letters = str.split("");
+        var stringLength = letters.length;
+            if (stringLength % 2 === 0 ){
+                var middle = str.length / 2 - 1; //인덱스가 0부터 시작이니까 -1해줌
+                var middle2 = middle + 1;
+                var middleletter1 = letters[middle];
+                var middleletter2 = letters[middle2];
+                console.log(middleletter1+middleletter2);
+                return middleletter1+middleletter2;
+            } else {
+                var middle = Math.floor(str.length / 2) - 1; //나누면 소숫점 나오니까 !! 
+                var middleletter1 = letters[middle];
+                console.log(middleletter1);
+                return middleletter1;
+            }
+      }
+      find_middle_letters('dish');
+      find_middle_letters('happybirthday');
+    </script>
+  </body>
+</html>

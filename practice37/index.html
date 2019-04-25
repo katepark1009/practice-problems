@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    ## alternate caps
+
+    - given a string, create a new string with every other letter capitalized
+    - example:
+        - parameters: "amazing"
+        - return: "aMaZiNg"
+    
+    ### human-level instructions
+    - create variable to store new string
+    - start a loop to proceed through the string
+        - get a new letter from the string
+            - store it in a variable
+        - get the next letter from the string
+            - store it in a variable
+            - capitalize it
+        - add the regular and capitalized letters to the new string
+    - repeat
+    
+        
+    <script>
+      var a =  "amazing";
+
+      function makeEvenLetterCap (str) {
+          var result='';
+          var splitStr = str.split("");
+          for ( var i = 0; i < splitStr.length; i++ ){
+            if(i % 2 === 0 ) {
+                result+= splitStr[i];
+            } else {
+                var capStr = splitStr[i].toUpperCase();
+                result+= capStr;
+            }
+          }
+        return result;
+      }
+
+      console.log(makeEvenLetterCap(a));
+        
+    </script>
+</body>
+</html>

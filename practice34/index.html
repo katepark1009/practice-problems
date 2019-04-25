@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      Build a function that takes in two strings and finds the longest common
+      string between them - Write a function that takes one two parameters -
+      Parameter 1 - a string of letters - Parameter 2 - a string of letters -
+      The function should return the longest common string between the two
+      strings - Example: - lcs('abcdefg','abc') returns 'abc' -
+      lcs('abdefghij','abefgh') returns 'efgh' because that is a longer string
+      than 'ab' which is also common -'abcdefg' '' 
+      
+      
+      
+      
+      
+      1. write function takes 2
+      parameters which is str. str1, str2 2. set var count as 0, var result is
+      [] 2. loop through str1 first. set var i in for loop and use it as an
+      index of str1. str1[i] will give us each letter of str1 3. make for loop
+      which is go through str2. and set var j in for loop and use it as an index
+      of str2. 4. starting outer for loop, get str1[0] first and go to inner for
+      loop. 5.and compare str[0] and str2[j] and find the common letter using
+      'indexOf' 6.if there's no common letter, it will return -1... so if value
+      is -1, mo]qqqqqqqqa=vet to next index. 7. if there's common letter, it will return
+      it's index number. str[j] now same letter in str[i]. add str[j] to empty
+      string using + and add +1 to count to make sure how many letters are
+      common 8. if count has already value, not equals to 0. we make new var j
+      and compare it with var count and make var new result. which one is big or
+      small. 9. if new result is big, return new result. if new result is small,
+      return result.
+    </div>
+    <script>
+      function findLongestString(str1, str2) {
+        var allCommonStrings = [];
+        var count1 = 0;
+        var commonString = "";
+        var compareString = "";
+        for (var i = 0; i < str1.length; i++) {
+          //debugger;
+          //console.log('str1[index] letter',letter);
+          for (var j = 0; j < str2.length; j++) {
+            var letter1 = str1[i];
+            var letter2 = str2[j];
+            
+            // if( letter1 !== -1 ){
+            //   var matchLetter= str2[str2Index];
+            //   var commonString = commonString + matchLetter;
+            //   //console.log('matchLetter', matchLetter);
+            //   if( i - str2Index !== 0 || i - str2Index !== 1 || i - str2Index !== -1) {
+            //     commonString = '';
+            //   }
+            if (letter1 === letter2) {
+              if (count1 == 0) {
+                count1++;
+                commonString += letter2;
+              } else if (count1 !== 0) {
+                console.log("same letter");
+              }
+            }
+            count1 = 0;
+            allCommonStrings.push(commonString);
+          }
+        }
+        for (var x = 0; x < allCommonStrings.length; x++) {
+          var result = allCommonStrings.reduce(function(a, b) {
+            return a.length > b.length ? a : b;
+          });
+        }
+        console.log("allcommonstring", allCommonStrings);
+        console.log("result", result);
+        return result;
+      }
+      // console.log('commonstring', findLongestString('abcdefg','abc'));
+      console.log("commonstring", findLongestString("abdefghij", "abefgha"));
+      // console.log('commonstring', findLongestString('aqwekateparkpsdkfjdfks', 'kateparkslkdjflaksd'));
+    </script>
+  </body>
+</html>

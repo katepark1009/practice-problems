@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        ## Numeric Spirals
+
+        Build a function that takes one parameter and prints out the Fibonacci sequence based on the input parameter. 
+        
+        - Write a function that takes one parameter
+            - Parameter 1 - A number
+        - The function should output the Fibonacci sequence to the number of spaces set by parameter 1 starting from zero.
+        - Example:
+            - `fibSequence(12);`
+            - Output - `0 1 1 2 3 5 8 13 21 34 55 89`
+        - If you are unfamiliar with the Fibonacci sequence <a href="https://www.google.com" target="_blank">Click Here</a>
+    <script>
+        var newStr = [0, 1]; //0 1 , 1 , 2, 3
+        var startNum = 0;
+        var num1 = 0; 
+        var num2 = 1; //3
+        var add = 0; //1
+    function fibSequence(num) { 
+        newStr.concat(num1, '', num2, '');
+        for ( var i = 0 ; i < num -2 ; i++) { //i=2
+            add = num1+ num2; // add = 2 + 1 = 3 
+            num1 = num2;
+            num2 = add;
+            newStr.push(add);     
+        }
+        return newStr;
+    }
+
+    console.log(fibSequence(12));
+    </script>
+</body>
+</html>

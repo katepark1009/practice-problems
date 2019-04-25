@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        ## Find the vowels
+
+        - given a string, find all the vowels in the string.  Store them in a new string
+        - example:
+            - parameters: "four score and seven years ago"
+            - return: "ouoeaeeeaao"
+        
+        ### human-level instructions
+        - create variable to store vowels
+        - begin loop
+            - get each letter, one at a time
+            - compare it with each each vowel and see if it matches
+                - if it is, add it to the vowel variable
+        - repeat
+        
+    <script>
+        var a = "four score and seven years ago";
+        var b = "whAt is Unique About reference vAriables?"
+        
+        
+        function findVowels(str){
+            var vowels = ["a","e","i","o","u"];
+            var splitStrAll = str.split("");
+            var result = '';
+            for (var i = 0; i < splitStrAll.length ; i++) {
+                    var splitStr = splitStrAll[i].toLowerCase();
+                    if(splitStr === "a" || splitStr === "e" || splitStr === "i" || splitStr === "o" || splitStr === "u" ) {
+                        result += splitStr;
+                    }
+            }
+            return result;
+        }
+        
+        console.log(findVowels(a));
+        console.log(findVowels(b)); //works with upper case too.
+        
+    </script>
+</body>
+</html>

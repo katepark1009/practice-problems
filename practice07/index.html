@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        ## Igpay Atinlay
+
+        Build a function that will translate text into "Pig Latin" Take the first consonant and move it to the end of a word and then affix "ay" to the end of that word."
+        
+        - Write a function that takes one parameter
+            - Parameter 1 - A string
+        - The function should output your input string translated into Pig Latin
+            - Example: 
+                - `var myString = "Hello my name is Stu"`
+                - `translate(myString);
+                - Output - `"ellohay ymay ameya siay tusay"`
+        
+        #### Making it better!
+        
+        - There are several more rules to Pig Latin, try incorporating as many as you can into your function.
+            - There are different rules for words that start with vowel sounds or silent letters for example.
+            - <a href="http://en.wikipedia.org/wiki/Pig_Latin">Here</a> is a link to an explanation of all the rules.
+        - Also try maintaining capitalization of words that are capitalized in your input string.
+            - Example: 
+                - `"Hello there"` would be `"Ellohay heretay"` 
+    <script>
+        var myString = "Hello my name is Stu";
+        console.log(myString.split(' ')); // 단어 단위로 쪼갤때 공백 사용.
+        var words = myString.split(' '); // array of words.
+
+        function pig_Latin(str) {
+            var wordsArray = [str.split(' ')]; 
+            for ( var i = 0 ;  i < wordsArray.length ; i++) {
+                var word = wordsArray[i].toLowerCase();
+                var splitWord = word.split(''); //letter단위로 
+                var firstletter = splitWord.shift();
+                word.push(firstletter + 'ay');
+
+            }
+            return 
+        }
+        
+
+
+    </script>
+</body>
+</html>
